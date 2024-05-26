@@ -20,7 +20,7 @@ public class ShelfService {
         this.repository.save(s);
     }
 
-    public List<Shelf> findByShopperId(String shopperId) {
-        return this.repository.findByShopperId(shopperId);
+    public List<Shelf> findByShopperId(String shopperId, String brand) {
+        return this.repository.findByShopperId(shopperId, brand);
     }
 }

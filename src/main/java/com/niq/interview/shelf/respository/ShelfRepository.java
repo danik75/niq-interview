@@ -10,6 +10,6 @@ import java.util.List;
 @Repository
 public interface ShelfRepository extends CrudRepository<Shelf, Long> {
 
-    @Query(value = "SELECT s FROM Shelf s WHERE s.shopperId= ?1")
-    List<Shelf> findByShopperId(String shopperId);
+    @Query("SELECT s FROM Shelf s INNER JOIN s.category c WHERE s.shopperId = ?1 AND c.brand = ?2")
+    List<Shelf> findByShopperId(String shopperId, String brand);
 }

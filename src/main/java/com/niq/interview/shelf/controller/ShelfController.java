@@ -25,8 +25,8 @@ public class ShelfController {
     }
 
     @GetMapping("/{shopperId}")
-    public List<Shelf> findByShopperId(@PathVariable String shopperId){
-        return  this.shelfService.findByShopperId(shopperId);
+    public List<Shelf> findByShopperId(@PathVariable String shopperId, @RequestParam String brand){
+        return  this.shelfService.findByShopperId(shopperId, brand);
     }
 
 }

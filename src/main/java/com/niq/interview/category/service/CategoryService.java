@@ -4,9 +4,6 @@ import com.niq.interview.category.model.Category;
 import com.niq.interview.category.respository.CategoryRepository;
 import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
-import java.util.List;
-
 @Component
 public class CategoryService {
 
@@ -21,7 +18,7 @@ public class CategoryService {
         this.repository.save(c);
     }
 
-    public Iterable<Category> getAllcategories(){
+    public Iterable<Category> getAllCategories(){
         return repository.findAll();
     }
 }

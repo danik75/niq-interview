@@ -6,8 +6,6 @@ import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
 @RestController
 @RequestMapping("/api/category")
 public class CategoryController {
@@ -26,7 +24,7 @@ public class CategoryController {
 
     @GetMapping("")
     public Iterable<Category> findAll(){
-        return  this.categoryService.getAllcategories();
+        return  this.categoryService.getAllCategories();
     }
 
 }

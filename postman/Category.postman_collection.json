@@ -60,6 +60,68 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Add shelf",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"category\":{\n        \"id\": 1\n    },\n    \"shopperId\": \"1236\",\n    \"relevanceScore\": 80.5\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/shelf",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"shelf"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get shelf by shopperId",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/shelf/1235?brand=Brand 1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"shelf",
+						"1235"
+					],
+					"query": [
+						{
+							"key": "brand",
+							"value": "Brand 1"
+						}
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }

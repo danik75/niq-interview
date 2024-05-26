@@ -1,4 +1,4 @@
-package com.niq.interview.niq_interview;
+package com.niq.interview;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

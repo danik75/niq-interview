@@ -1,13 +1,13 @@
-package com.niq.interview.niq_interview;
+package com.niq.interview;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class NiqInterviewApplication {
+public class Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(NiqInterviewApplication.class, args);
+		SpringApplication.run(Application.class, args);
 	}
 
 }

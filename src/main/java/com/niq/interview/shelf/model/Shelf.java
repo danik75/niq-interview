@@ -1,17 +1,15 @@
 package com.niq.interview.shelf.model;
 
-import com.niq.interview.category.model.Category;
+import com.niq.interview.product.model.Product;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
-
-import java.util.Objects;
 
 @Entity(name = "Shelf")
 @Table(
         name = "shelf",
         uniqueConstraints = {
                 @UniqueConstraint(
-                        name = "category_id_shopper_id_unique",
+                        name = "product_id_shopper_id_unique",
                         columnNames = "categoryId_shopperId"
                 )
         }
@@ -34,8 +32,8 @@ public class Shelf {
     private Long id;
 
     @OneToOne(cascade = CascadeType.DETACH)
-    @JoinColumn(name = "category_id")
-    private Category category;
+    @JoinColumn(name = "product_id")
+    private Product product;
 
     @NotBlank
     private String shopperId;
@@ -45,18 +43,18 @@ public class Shelf {
     public Shelf() {
     }
 
-    public Shelf(Category category, String shopperId, Double relevanceScore) {
-        this.category = category;
+    public Shelf(Product product, String shopperId, Double relevanceScore) {
+        this.product = product;
         this.shopperId = shopperId;
         this.relevanceScore = relevanceScore;
     }
 
-    public Category getCategory() {
-        return category;
+    public Product getProduct() {
+        return product;
     }
 
-    public void setCategory(Category category) {
-        this.category = category;
+    public void setProduct(Product product) {
+        this.product = product;
     }
 
     public String getShopperId() {
@@ -76,21 +74,9 @@ public class Shelf {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Shelf shelf)) return false;
-        return Objects.equals(id, shelf.id) && Objects.equals(getCategory(), shelf.getCategory()) && Objects.equals(getShopperId(), shelf.getShopperId()) && Objects.equals(getRelevanceScore(), shelf.getRelevanceScore());
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, getCategory(), getShopperId(), getRelevanceScore());
-    }
-
-    @Override
     public String toString() {
         return "Shelf{" +
-                "category=" + category +
+                "product=" + product +
                 ", shopperId='" + shopperId + '\'' +
                 ", relevanceScore=" + relevanceScore +
                 '}';

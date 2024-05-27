@@ -7,7 +7,7 @@
 	},
 	"item": [
 		{
-			"name": "Get all categories",
+			"name": "Get all products",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -27,7 +27,7 @@
 			"response": []
 		},
 		{
-			"name": "Add category",
+			"name": "Add product",
 			"request": {
 				"method": "POST",
 				"header": [
@@ -39,7 +39,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"name\" : \"Category 1\",\n    \"brand\" : \"Brand 1\"\n}",
+					"raw": "{\n    \"category\" : \"Food\",\n    \"brand\" : \"Tnuva\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -47,7 +47,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/category",
+					"raw": "http://localhost:8080/api/product",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -55,7 +55,7 @@
 					"port": "8080",
 					"path": [
 						"api",
-						"category"
+						"product"
 					]
 				}
 			},
@@ -74,7 +74,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"category\":{\n        \"id\": 1\n    },\n    \"shopperId\": \"1236\",\n    \"relevanceScore\": 80.5\n}",
+					"raw": "{\n\"shopperId\": \"S-1000\",\n\"shelf\": [\n{\n\"productId\": \"MB-2093193398\",\n\"relevancyScore\": 31.089209569320897\n},\n{\n\"productId\": \"BB-2144746855\",\n\"relevancyScore\": 55.16626010671777\n},\n{\n\"productId\": \"MD-543564697\",\n\"relevancyScore\": 73.01492966268303\n}\n]\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -102,7 +102,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/api/shelf/1235?brand=Brand 1",
+					"raw": "http://localhost:8080/api/shelf/S-1000?limit=3",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -111,12 +111,22 @@
 					"path": [
 						"api",
 						"shelf",
-						"1235"
+						"S-1000"
 					],
 					"query": [
 						{
 							"key": "brand",
-							"value": "Brand 1"
+							"value": "Nike",
+							"disabled": true
+						},
+						{
+							"key": "category",
+							"value": "Sports",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": "3"
 						}
 					]
 				}
